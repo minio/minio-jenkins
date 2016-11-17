@@ -7,11 +7,25 @@ This is a simple Jenkins plugin that lets you upload Jenkins artifacts to a Mini
 
 - A Minio server instance. Installation instructions available [here](https://docs.minio.io/docs/minio-quickstart-guide).
 
+### Build from source
+
+- To build the plugin, you'll need maven installed on your system. On Ubuntu you can do that using 
+
+```
+$ sudo apt-get install mvn
+```
+
+- Once maven is installed, download the source code from this repo. Then browse to the folder you downloaded the source via CLI and run the command
+
+```
+$ mvn clean install
+```
+
+- This should create the `.hpi` plugin file. 
+
 ### Installation
 
-- Download the latest plugin release from [here](https://github.com/NitishT/Minio-Jenkins-Plugin/releases).
-
-- Open Jenkins homepage. Navigate to Manage Jenkins >> Manage Plugins >> Advanced >> Upload Plugin. Select the .hpi file that you downloaded in the previous step. Then click *Upload*. This will install the plugin.
+- Open Jenkins homepage. Navigate to Manage Jenkins >> Manage Plugins >> Advanced >> Upload Plugin. Select the `.hpi` file that you built in the previous step. Then click *Upload*. This will install the plugin.
 
 - Now let us configure the plugin. Navigate to Manage Jenkins >> Configure System >> Minio upload configuration. Enter the Minio server URL, AccessKey and SecretKey (available during Minio server installation) and click *Save*.
 
@@ -19,6 +33,3 @@ This is a simple Jenkins plugin that lets you upload Jenkins artifacts to a Mini
 
 - Now, all the artifacts as selected under the Source field will be uploaded to your Minio server.
 
-### Acknowledgement
-
-- Authors of [Jenkins S3 plugin](https://github.com/jenkinsci/s3-plugin) for providing a great place to get started.
