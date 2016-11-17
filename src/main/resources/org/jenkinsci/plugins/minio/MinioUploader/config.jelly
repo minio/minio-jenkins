@@ -1,0 +1,28 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+    See global.jelly for a general discussion about jelly script.
+  -->
+
+  <!--
+    Creates text fields that shows the value of the "Minio Bucket Name". 
+    When submitted, it will be passed to the corresponding constructor 
+    parameter.
+  -->
+
+	<f:entry title="Source" field="sourceFile" help="/src/main/resources/org/jenkinsci/plugins/minio/MinioUploader/help-sourceFile.html">
+          <f:textbox/>
+    </f:entry>
+    <f:entry title="Exclude" field="excludedFile">
+        <f:textbox/>
+    </f:entry>
+    <f:entry title="Minio Bucket Name" field="bucketName" help="/src/main/resources/org/jenkinsci/plugins/minio/MinioUploader/help-bucket.html">
+		<f:textbox />
+	</f:entry>
+	<f:entry title="Object Name Prefix" field="objectNamePrefix">
+        <f:textbox/>
+    </f:entry>
+	 
+</j:jelly>
